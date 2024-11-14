@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ords-nondev
+  namespace: ords-zoo
+spec:
+  ports:
+  - name: https-ords
+    port: 8888
+    protocol: TCP
+    targetPort: 8443
+  selector:
+    app.kubernetes.io/instance: ords-nondev
+    app.kubernetes.io/name: ords-nondev
+  sessionAffinity: None
+  type: ClusterIP
