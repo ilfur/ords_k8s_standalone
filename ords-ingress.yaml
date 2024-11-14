@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ords-ingress
+  namespace: ords-zoo
+spec:
+  ingressClassName: istio
+  rules:
+  - host: ords.130-61-137-234.nip.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ords-nondev
+            port:
+              number: 8888
