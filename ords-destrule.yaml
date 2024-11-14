@@ -1,0 +1,10 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: ords-https-destrule
+  namespace: ords-zoo
+spec:
+  host: ords-nondev
+  trafficPolicy:
+    tls:
+      mode: SIMPLE
