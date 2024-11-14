@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: ords-init-config
-  namespace: sidb23c
+  namespace: ords-zoo
 data:
   ords_setup.sh: |-
     #!/bin/bash
